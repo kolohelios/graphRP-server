@@ -1,3 +1,3 @@
-export default () => {
-  return 'hello'
-}
+import * as Server from './lib/server'
+
+Server.init()
