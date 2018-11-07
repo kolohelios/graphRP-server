@@ -1,3 +1,7 @@
 import * as Server from './lib/server'
 
-Server.init()
+try {
+  Server.init()
+} catch (error) {
+  console.error(error)
+}
