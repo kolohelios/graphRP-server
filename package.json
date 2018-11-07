@@ -3,8 +3,13 @@
   "version": "0.0.1",
   "description": "graphRP Server",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node fuse"
   },
   "author": "Jon Edwards jkedwards@me.com http://kolohelios.com",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "fuse-box": "^3.6.0",
+    "typescript": "^3.1.6"
+  }
 }
