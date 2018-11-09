@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "graphRP Server",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --coverage --runInBand",
     "dev": "node fuse"
   },
   "author": "Jon Edwards jkedwards@me.com http://kolohelios.com",

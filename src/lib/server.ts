@@ -2,7 +2,7 @@ import * as Hapi from 'hapi'
 import { ApolloServer } from 'apollo-server-hapi'
 import typeDefs from './schema'
 import resolvers from './resolvers'
-import * as jwt from 'jsonwebtoken'
+import plugins from './plugins'
 
 const secret = 'ThisSecretIsNoSuchThing'
 
@@ -31,26 +31,6 @@ const init = async () => {
     resolvers,
   })
 
-  server.route({
-    method: 'GET',
-    path: '/login',
-    options: {
-      auth: false
-    },
-    handler: () => {
-      const token = jwt.sign({ id: 1 }, secret, { algorithm: 'HS256' })
-      return token
-    }
-  })
-
-  server.route({
-    method: 'GET',
-    path: '/hello',
-    handler: (req, res) => {
-      return 'yes, token received!'
-    }
-  })
-
   await server.register(require('hapi-auth-jwt2'))
 
   server.auth.strategy('jwt', 'jwt', {
@@ -58,7 +38,10 @@ const init = async () => {
     validate,
   })
 
+  // set the auth default before we add additional plugins
   server.auth.default('jwt')
+
+  server.register(plugins)
 
   await apolloServer.applyMiddleware({ app: server, })
 
@@ -68,7 +51,7 @@ const init = async () => {
 }
 
 const stop = async () => {
-  await server.stop()
+  await server.stop({ timeout: 60 * 1000 })
 }
 
 export { init, server, stop }

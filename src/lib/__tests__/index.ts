@@ -1,13 +1,15 @@
 import * as Server from '../server'
 
 describe('server entry point', () => {
-  afterEach(async () => {
-    // if we don't stop the server here, we'll get a Jest async operation error
-    await Server.stop()
+  beforeAll(() => {
+    return Server.init()
   })
 
-  test('starting server', async () => {
-    await Server.init()
+  afterAll(() => {
+    return Server.stop()
+  })
+
+  test('started server', async () => {
     expect(Server.server).toBeDefined()
   })
 })
