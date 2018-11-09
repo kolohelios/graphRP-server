@@ -139,6 +139,13 @@
   resolved "https://registry.yarnpkg.com/@types/joi/-/joi-14.0.0.tgz#7906aca6850868f39f888efcaef28bbcbbab5498"
   integrity sha512-q3r+5QfNrthJL+5Pvb9MOP7rJniTfAV+cGbsO2a3ItGSuwmp2vdjjZ/VCWKwGT5lNx4eOvZI4O3IpSIXh3f4RA==
 
+"@types/jsonwebtoken@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.3.0.tgz#1fe79489df97b49273401ac3c8019cbf1dae4578"
+  integrity sha512-YKnUTR4VxwljbPORPrRon9E3uel1aD8nUdvzqArCCdMTWPvo0gnI2UZkwIHN2QATdj6HYXV/Iq3/KcecAO42Ww==
+  dependencies:
+    "@types/node" "*"
+
 "@types/long@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.0.tgz#719551d2352d301ac8b81db732acb6bdc28dbdef"
@@ -817,7 +824,7 @@ body-parser@1.18.3:
     raw-body "2.3.3"
     type-is "~1.6.16"
 
-boom@7.x.x, boom@^7.1.0:
+boom@7.x.x, boom@^7.1.0, boom@^7.1.1:
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/boom/-/boom-7.2.2.tgz#ac92101451aa5cea901aed07d881dd32b4f08345"
   integrity sha512-IFUbOa8PS7xqmhIjpeStwT3d09hGkNYQ6aj2iELSTxcVs2u0aKn1NzhkdUQSzsRg1FVkj3uit3I6mXQCBixw+A==
@@ -895,6 +902,11 @@ bser@^2.0.0:
   integrity sha1-mseNPtXZFYBP2HrLFYvHlxR6Fxk=
   dependencies:
     node-int64 "^0.4.0"
+
+buffer-equal-constant-time@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
+  integrity sha1-+OcRMvf/5uAaXJaXpMbz5I1cyBk=
 
 buffer-from@1.x, buffer-from@^1.0.0:
   version "1.1.1"
@@ -1167,7 +1179,7 @@ cookie-signature@1.0.6:
   resolved "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
   integrity sha1-4wOogrNCzD7oylE6eZmXNNqzriw=
 
-cookie@0.3.1:
+cookie@0.3.1, cookie@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
   integrity sha1-5+Ch+e9DtMi6klxcWpboBtFoc7s=
@@ -1370,6 +1382,13 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
+
+ecdsa-sig-formatter@1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.10.tgz#1c595000f04a8897dfb85000892a0f4c33af86c3"
+  integrity sha1-HFlQAPBKiJffuFAAiSoPTDOvhsM=
+  dependencies:
+    safe-buffer "^5.0.1"
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -1982,6 +2001,15 @@ handlebars@^4.0.3:
     source-map "^0.6.1"
   optionalDependencies:
     uglify-js "^3.1.4"
+
+hapi-auth-jwt2@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/hapi-auth-jwt2/-/hapi-auth-jwt2-8.1.0.tgz#4e3497cdb3925a315861f60f4057ddd11466e68c"
+  integrity sha512-Xebbslw5jAPnw+KbxhsuFXV38SxPqtvTYwrSemXZicbRKvIn8p0Ut0MSNmzG6nxpB5Nd4aA0b8U6MCDFd2ElYw==
+  dependencies:
+    boom "^7.1.1"
+    cookie "^0.3.1"
+    jsonwebtoken "^8.1.0"
 
 hapi@^17.7.0:
   version "17.7.0"
@@ -3015,6 +3043,21 @@ jsonify@~0.0.0:
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
   integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
 
+jsonwebtoken@^8.1.0, jsonwebtoken@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.3.0.tgz#056c90eee9a65ed6e6c72ddb0a1d325109aaf643"
+  integrity sha512-oge/hvlmeJCH+iIz1DwcO7vKPkNGJHhgkspk8OH3VKlw+mbi42WtD4ig1+VXRln765vxptAv+xT26Fd3cteqag==
+  dependencies:
+    jws "^3.1.5"
+    lodash.includes "^4.3.0"
+    lodash.isboolean "^3.0.3"
+    lodash.isinteger "^4.0.4"
+    lodash.isnumber "^3.0.3"
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
+    lodash.once "^4.0.0"
+    ms "^2.1.1"
+
 jsprim@^1.2.2:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsprim/-/jsprim-1.4.1.tgz#313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2"
@@ -3024,6 +3067,23 @@ jsprim@^1.2.2:
     extsprintf "1.3.0"
     json-schema "0.2.3"
     verror "1.10.0"
+
+jwa@^1.1.5:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/jwa/-/jwa-1.1.6.tgz#87240e76c9808dbde18783cf2264ef4929ee50e6"
+  integrity sha512-tBO/cf++BUsJkYql/kBbJroKOgHWEigTKBAjjBEmrMGYd1QMBC74Hr4Wo2zCZw6ZrVhlJPvoMrkcOnlWR/DJfw==
+  dependencies:
+    buffer-equal-constant-time "1.0.1"
+    ecdsa-sig-formatter "1.0.10"
+    safe-buffer "^5.0.1"
+
+jws@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/jws/-/jws-3.1.5.tgz#80d12d05b293d1e841e7cb8b4e69e561adcf834f"
+  integrity sha512-GsCSexFADNQUr8T5HPJvayTjvPIfoyJPtLQBwn5a4WZQchcrPMPMAWcC1AzJVRDKyD6ZPROPAxgv6rfHViO4uQ==
+  dependencies:
+    jwa "^1.1.5"
+    safe-buffer "^5.0.1"
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
@@ -3104,6 +3164,41 @@ locate-path@^2.0.0:
   dependencies:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
+
+lodash.includes@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/lodash.includes/-/lodash.includes-4.3.0.tgz#60bb98a87cb923c68ca1e51325483314849f553f"
+  integrity sha1-YLuYqHy5I8aMoeUTJUgzFISfVT8=
+
+lodash.isboolean@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/lodash.isboolean/-/lodash.isboolean-3.0.3.tgz#6c2e171db2a257cd96802fd43b01b20d5f5870f6"
+  integrity sha1-bC4XHbKiV82WgC/UOwGyDV9YcPY=
+
+lodash.isinteger@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/lodash.isinteger/-/lodash.isinteger-4.0.4.tgz#619c0af3d03f8b04c31f5882840b77b11cd68343"
+  integrity sha1-YZwK89A/iwTDH1iChAt3sRzWg0M=
+
+lodash.isnumber@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz#3ce76810c5928d03352301ac287317f11c0b1ffc"
+  integrity sha1-POdoEMWSjQM1IwGsKHMX8RwLH/w=
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
+
+lodash.isstring@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/lodash.isstring/-/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
+  integrity sha1-1SfftUVuynzJu5XV2ur4i6VKVFE=
+
+lodash.once@^4.0.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
+  integrity sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
