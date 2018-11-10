@@ -1,7 +1,6 @@
 import * as Hapi from 'hapi'
 import { ApolloServer } from 'apollo-server-hapi'
-import typeDefs from './schema'
-import resolvers from './resolvers'
+import schema from './schema'
 import plugins from './plugins'
 
 const secret = 'ThisSecretIsNoSuchThing'
@@ -26,10 +25,7 @@ const validate = async (decoded, request) => {
 }
 
 const init = async () => {
-  const apolloServer = new ApolloServer({
-    typeDefs,
-    resolvers,
-  })
+  const apolloServer = new ApolloServer({ schema })
 
   await server.register(require('hapi-auth-jwt2'))
 

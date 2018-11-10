@@ -12,6 +12,7 @@
     "@types/hapi": "^17.6.3",
     "@types/jest": "^23.3.9",
     "@types/jsonwebtoken": "^8.3.0",
+    "@types/lodash": "^4.14.118",
     "fuse-box": "^3.6.0",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.4",
@@ -23,6 +24,7 @@
     "hapi": "^17.7.0",
     "hapi-auth-jwt2": "^8.1.0",
     "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.11",
     "pm2": "^3.2.2"
   }
 }

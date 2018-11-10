@@ -1,8 +1,18 @@
-import { gql } from 'apollo-server-hapi'
+import { makeExecutableSchema } from 'apollo-server-hapi'
+import { typeDefs as Part, resolvers as partResolvers } from './part'
+import { merge as _merge } from 'lodash'
 
-export default gql`
+// otherwise uncategorized GQL schema would go here
+const Query = `
   type Query {
-    "A simple type for getting started!"
-    hello: String
+    _empty: String
   }
 `
+
+// otherwise uncategorized resolvers would go here
+const resolvers = {}
+
+export default makeExecutableSchema({
+  typeDefs: [Query, Part],
+  resolvers: _merge(resolvers, partResolvers),
+})
