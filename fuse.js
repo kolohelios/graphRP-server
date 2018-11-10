@@ -1,5 +1,9 @@
 const { FuseBox, JSONPlugin } = require('fuse-box')
 const { context, task } = require('fuse-box/sparky')
+const { spawn } = require('child_process')
+
+// start up the PM2 instance (we don't need to stop it; stopping Fuse-Box suffices)
+spawn('./node_modules/pm2/bin/pm2', ['start', './build/server/bundle.js'])
 
 context(class {
   getConfig() {
@@ -23,7 +27,8 @@ context(class {
 
     app.watch('src/**')
     app.completed((proc) => {
-        proc.start()
+      console.info('Restarting PM2 instance...')
+      spawn('./node_modules/pm2/bin/pm2', ['restart', './build/server/bundle.js'])
     })
   }
 })
